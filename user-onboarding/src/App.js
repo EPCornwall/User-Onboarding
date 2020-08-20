@@ -24,13 +24,13 @@ function App() {
     });
   };
 
-  // const checkboxChange = (name, isChecked) => {
+  const checkBoxChange = (name, isChecked) => {
 
-  //   setForm({
-  //     ...form,
-  //     [name]: isChecked
-  //   })
-  // }
+    setForm({
+      ...form,
+      [name]: isChecked
+    })
+  }
 
   const handleSubmit = (e) =>{
     setUsers([...users, form])
@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-     <Form form={form} handleChange={handleChange} handleSubmit={handleSubmit}/>
+     <Form form={form} handleChange={handleChange} handleSubmit={handleSubmit} checkBoxChange={checkBoxChange}/>
      <UserList users={users}/>
     </div>
   );

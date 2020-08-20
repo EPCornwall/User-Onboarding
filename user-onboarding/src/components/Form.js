@@ -7,9 +7,9 @@ export default function Form(props){
     const {handleChange, form, handleSubmit, checkBoxChange} = props
 
     const onCheckboxChange = evt => {
-        const { name, checked } = evt.target.checked
+        const { name, checked } = evt.target
         checkBoxChange(name, checked)
-      }
+    }
     return(
         <div>
             <form>
