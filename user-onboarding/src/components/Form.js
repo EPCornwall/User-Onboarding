@@ -4,8 +4,12 @@ import React from 'react'
 
 
 export default function Form(props){
-    const {handleChange, form, handleSubmit} = props
+    const {handleChange, form, handleSubmit, checkBoxChange} = props
 
+    const onCheckboxChange = evt => {
+        const { name, checked } = evt.target.checked
+        checkBoxChange(name, checked)
+      }
     return(
         <div>
             <form>
@@ -32,7 +36,7 @@ export default function Form(props){
                         type='checkbox'
                         name='tos'
                         checked={form.tos ===true}
-                        // onChange={DO SOMETHING}
+                        onChange={onCheckboxChange}
                     />
                 </label>
                 

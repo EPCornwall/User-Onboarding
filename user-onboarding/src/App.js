@@ -3,14 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import Form from './components/Form'
 import UserList from './components/UserList'
-import Users from './components/Users'
 
 
 const initialFormValue = {
   name:'',
   email:'',
   password:'',
-  //TOS checkbox
+  tos:'false'
 }
 const initialUsers = [{}]
 
@@ -24,6 +23,14 @@ function App() {
       [e.target.name]: e.target.value,
     });
   };
+
+  // const checkboxChange = (name, isChecked) => {
+
+  //   setForm({
+  //     ...form,
+  //     [name]: isChecked
+  //   })
+  // }
 
   const handleSubmit = (e) =>{
     setUsers([...users, form])

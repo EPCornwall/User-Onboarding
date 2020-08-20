@@ -7,7 +7,7 @@ const {name, email, password, tos} = props.users
             <h3>Name: {name}</h3>
             <p>Email: {email}</p>
             <p>Password: {password}</p>
-            <p>TOS:</p>
+            <p>TOS:{tos}</p>
         </div>
     )
 }
