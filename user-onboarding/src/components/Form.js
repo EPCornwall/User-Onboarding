@@ -4,7 +4,7 @@ import React from 'react'
 
 
 export default function Form(props){
-    const {handleChange, form, handleSubmit, checkBoxChange} = props
+    const {handleChange, form, handleSubmit, checkBoxChange, buttonDisabled, errors} = props
 
     const onCheckboxChange = evt => {
         const { name, checked } = evt.target
@@ -31,17 +31,24 @@ export default function Form(props){
                     value={form.password}
                     onChange={(e)=>{handleChange(e)}}
                 />
-                <label> Terms of Service
+                <label htmlFor="tos"> Terms of Service
                     <input
                         type='checkbox'
                         name='tos'
-                        checked={form.tos ===true}
+                        checked={form.tos === true}
                         onChange={onCheckboxChange}
                     />
                 </label>
-                
+              <button disabled={buttonDisabled} onClick={handleSubmit}>Submit</button> 
+
+              
             </form>
-            <button onClick={handleSubmit}>Submit</button>
+            <div className="errors-container">
+                <div>{errors.name}</div>
+                <div>{errors.email}</div>
+                <div>{errors.password}</div>
+                <div>{errors.tos}</div>
+            </div> 
         </div>
     )
         
